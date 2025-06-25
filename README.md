@@ -27,6 +27,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 ## 使い方
+1. 本アプリを導入したいディスコードサーバのウェブフックURLを以下のURLから登録する。
+https://gg-scheduler.vercel.app/
+ウェブフックURLの取得方法：サーバー設定→アプリ→連携サービス→ウェブフック→新しいウェブフック→ウェブフックURLをコピー
+
+2. 指定日の指定の時間に、その日のスケジュール調整用のURLが送信される。
+3. サーバーのメンバーが予定を登録し、共有する。
 
 ## 実際の利用例
 
