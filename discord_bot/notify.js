@@ -4,7 +4,7 @@ const cron = require('node-cron');
 const { sendToWebhook, getAllCommunities } = require('./utils');
 // テスト用で毎分通知'* * * * *'
 // 本番用は '0 12 * * *'で毎日12時に投稿するようにする
-cron.schedule('* * * * *', async () => { 
+cron.schedule('0 12 * * *', async () => { 
   const today = new Date().toISOString().slice(0, 10); // 例: 2025-06-21
   const communities = await getAllCommunities(); 
 
