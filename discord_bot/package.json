@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "generate": "prisma generate --schema=schema.prisma",
+    "start": "node notify.js",
     "lint": "next lint"
   },
   "dependencies": {
