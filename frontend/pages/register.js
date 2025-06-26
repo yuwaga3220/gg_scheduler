@@ -29,7 +29,7 @@ export default function RegisterPage() {
         <>
           <p>✅ 登録が完了しました！</p>
           <p>このURLがDiscordに送られるようになりました👇</p>
-          <code>http://172.17.64.1:3000/?communityId={communityId}</code>
+          <code>https://gg-scheduler.vercel.app/?communityId={communityId}</code>
         </>
       ) : (
         <form onSubmit={handleSubmit}>
