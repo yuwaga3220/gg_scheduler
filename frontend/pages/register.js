@@ -1,5 +1,7 @@
 // pages/register.js
 import { useState } from 'react';
+import styles from "@/styles/register.module.css";
+
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -22,26 +24,28 @@ export default function RegisterPage() {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>サーバー登録</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        サーバー登録
+      </h1>
 
       {communityId ? (
-        <>
-          <p>✅ 登録が完了しました！</p>
+        <div>
+          <p className={styles.successBox}>✅ 登録が完了しました！</p>
           <p>このURLがDiscordに送られるようになりました👇</p>
           <code>https://gg-scheduler.vercel.app/?communityId={communityId}</code>
-        </>
+        </div>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
-            <label>サーバー名: </label>
-            <input value={name} onChange={(e) => setName(e.target.value)} required />
+            <label className={styles.label}>サーバー名（例えば...「仲良しゲーム部」）: </label>
+            <input type="text" className={styles.input} value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
           <div style={{ marginTop: '1rem' }}>
-            <label>Webhook URL: </label>
-            <input value={webhook} onChange={(e) => setWebhook(e.target.value)} required />
+            <label className={styles.label}>ウェブフックURL: </label>
+            <input type="text" className={styles.input} value={webhook} onChange={(e) => setWebhook(e.target.value)} required />
           </div>
-          <button type="submit" style={{ marginTop: '1rem' }}>登録</button>
+          <button className={styles.button}>登録</button>
         </form>
       )}
     </div>

@@ -1,0 +1,54 @@
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 600px;     /* ← これ重要！ */
+  margin: 0 auto;       /* ← 中央寄せ */
+}
+
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #f2f3f5;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: #5865f2;
+  color: white;
+  padding: 12px 24px;       /* 高さ + 横幅感アップ */
+  font-size: 1.1rem;         /* テキスト大きめに */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #4752c4;
+}
+
+.successBox {
+  background-color: #e6ffed;
+  border: 1px solid #b2f5c3;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #2ecc71;
+  margin-bottom: 1rem;
+}

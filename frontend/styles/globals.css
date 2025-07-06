@@ -1,7 +1,14 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #2b2d31;         /* メイン背景：Discordのチャット背景 */
+  --foreground: #f2f3f5;         /* メイン文字色：ほぼ白に近い */
+  --accent: #5865f2;             /* ボタンやリンク：Discordブルー */
+  --accent-hover: #4752c4;       /* ボタン hover 用 */
+  --card-bg: #1e1f22;            /* 入力欄やカード系の背景 */
+  --border: #4f545c;             /* 枠線・区切り用グレー */
+  --success: #2ecc71;            /* 成功メッセージ用グリーン */
+  --error: #e74c3c;              /* エラーメッセージ用レッド */
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,7 +26,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,8 +38,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
 }
 
 @media (prefers-color-scheme: dark) {
