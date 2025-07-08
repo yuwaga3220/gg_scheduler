@@ -3,6 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/register": "pages/register.js",
-  "/api/registerCommunity": "pages/api/registerCommunity.js",
-  "/": "pages/index.js"
+  "/status_mock": "pages/status_mock.js",
+  "/": "pages/index.js",
+  "/index_mock": "pages/index_mock.js"
 }

@@ -3,6 +3,7 @@
   padding-right: 2rem;
   max-width: 600px;     /* ← これ重要！ */
   margin: 0 auto;       /* ← 中央寄せ */
+  padding-top: 2rem;
 }
 
 
