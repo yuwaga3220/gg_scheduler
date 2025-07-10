@@ -12,12 +12,17 @@ cron.schedule('0 3 * * *', async () => {
   // const webhookUrl = 'https://discordapp.com/api/webhooks/1385323548150599761/StsJiTyNZHWv1oiWObXhP_MUI68CVXerdYopFz6AeiwYD0ek2TP7eEvLV3lNohPnHWPF'
 
   for (const community of communities) {
-    const url = `https://gg-scheduler.vercel.app/?communityId=${community.id}`;
-    const content = `🎮 ${today} の予定共有はこちら！\n${url}`;
+    const registerUrl = `https://gg-scheduler.vercel.app/?communityId=${community.id}`;
+    const statusUrl = `https://gg-scheduler.vercel.app/?communityId=${community.id}/status`
+    const content = [
+      `🎮 ${today} の予定共有リンク`,
+      `📝 予定登録: ${registerUrl}`,
+      `👀 みんなの予定: ${statusUrl}`,
+    ].join('\n');
 
     console.log(`🔗 [${community.name}] webhook URL: ${community.webhook}`);
 
-    // 本番ではcommunity.webhookに直す
+    // 本番ではcommunity.webhook
     const result = await sendToWebhook(community.webhook, content, community.name);
     console.log(result);
   }
