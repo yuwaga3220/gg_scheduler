@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>今日、遊ぶ時間を教えてね</h1>
+      <h1 className={styles.title}>遊ぶ時間を知らせよう</h1>
       <p style={{ marginBottom: '1rem' }}>
         {new Date().toLocaleDateString('ja-JP', {
           year: 'numeric',

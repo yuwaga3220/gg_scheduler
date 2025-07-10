@@ -11,7 +11,7 @@ export default function StatusPage({ scheduleByTime, communityName, communityId 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        今日のみんなのプレイ予定（モック表示）
+        みんなの予定
       </h1>
 
       <p style={{ marginBottom: '1rem' }}>
