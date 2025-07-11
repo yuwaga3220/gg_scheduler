@@ -1,9 +1,12 @@
 // pages/register.js
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from "@/styles/register.module.css";
 
 
 export default function RegisterPage() {
+  const router = useRouter();
+
   const [name, setName] = useState('');
   const [webhook, setWebhook] = useState('');
   const [communityId, setCommunityId] = useState('');
@@ -54,7 +57,7 @@ export default function RegisterPage() {
                 <input
                   type="text"
                   value={serverName}
-                  onChange={(e) => setServerName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="例：毎日ゲーム部"
                   required
                   className={styles.input}
@@ -66,7 +69,7 @@ export default function RegisterPage() {
                 <input
                   type="text"
                   value={webhookUrl}
-                  onChange={(e) => setWebhookUrl(e.target.value)}
+                  onChange={(e) => setWebhook(e.target.value)}
                   placeholder="https://discord.com/api/webhooks/..."
                   required
                   className={styles.input}
