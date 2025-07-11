@@ -56,7 +56,7 @@ export default function RegisterPage() {
                 ギルド名（サーバー名）
                 <input
                   type="text"
-                  value={serverName}
+                  value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="例：毎日ゲーム部"
                   required
@@ -68,7 +68,7 @@ export default function RegisterPage() {
                 Discord Webhook URL
                 <input
                   type="text"
-                  value={webhookUrl}
+                  value={webhook}
                   onChange={(e) => setWebhook(e.target.value)}
                   placeholder="https://discord.com/api/webhooks/..."
                   required
