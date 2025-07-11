@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/register": "pages/register.js",
   "/status_mock": "pages/status_mock.js",
-  "/": "pages/index.js",
-  "/index_mock": "pages/index_mock.js"
+  "/register_mock": "pages/register_mock.js",
+  "/schedule_mock": "pages/schedule_mock.js"
 }

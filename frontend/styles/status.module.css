@@ -3,32 +3,32 @@
   padding-right: 2rem;
   max-width: 600px;     /* ← これ重要！ */
   margin: 0 auto;       /* ← 中央寄せ */
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #2e1f0f;
 }
 
+.card {
+  max-width: 640px;
+  margin: 0rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
 
-.title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #f2f3f5;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #2e1f0f;
+  padding-bottom: 0.5rem;
 }
 
 .label {
   font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
-}
-
-.input {
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  margin-bottom: 1rem;
 }
 
 .button {
@@ -57,23 +57,23 @@
 }
 
 .timeBlock {
-  background-color: #2b2d31;  /* Discord風の暗めグレー */
+  background-color: #f7f7f8;  /* Discord風の暗めグレー */
   padding: 0.75rem 1rem;
   border-radius: 8px;
   margin-bottom: 0.75rem;
-  border: 3px solid #f2f3f5;
-  color: #f2f3f5;
-  transition: background-color 0.2s ease;
+  border: 2px solid #e3e5e8;
+  color: #202225;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
 .timeBlock.empty {
-  opacity: 0.2;
+  opacity: 0.4;
   font-style: italic;
 }
 
 .busy {
-  border: 2px solid #ffd700;     /* ゴールド枠 */
-  background-color: #3a3f4b;     /* 少し明るめに */
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); /* ふんわり光る */
-  font-weight: bold;
+  border: 2px solid #5865f2;     /* ゴールド枠 */
+  background-color: #e0e4ff;     /* 少し明るめに */
+  box-shadow: 0 0 6px rgba(88, 101, 242, 0.4); /* ふんわり光る */
+  font-weight: 600;
 }

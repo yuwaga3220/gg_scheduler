@@ -20,15 +20,10 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/index_mock": [
+    "/register_mock": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/index_mock.js"
-    ],
-    "/register": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/register.js"
+      "static/chunks/pages/register_mock.js"
     ],
     "/status_mock": [
       "static/chunks/webpack.js",

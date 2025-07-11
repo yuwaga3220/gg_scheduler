@@ -13,7 +13,7 @@ cron.schedule('0 3 * * *', async () => {
 
   for (const community of communities) {
     const registerUrl = `https://gg-scheduler.vercel.app/?communityId=${community.id}`;
-    const statusUrl = `https://gg-scheduler.vercel.app/?communityId=${community.id}/status`
+    const statusUrl = `https://gg-scheduler.vercel.app/status?communityId=${community.id}`
     const content = [
       `🎮 ${today} の予定共有リンク`,
       `📝 予定登録: ${registerUrl}`,

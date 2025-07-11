@@ -18,62 +18,64 @@ export default function StatusMockPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
-        今日のみんなのプレイ予定（モック表示）
-      </h1>
+      <div className={styles.card}>
+        <h1 className={styles.heading}>
+          📅 みんなの予定
+        </h1>
 
-      <p style={{ marginBottom: '1rem' }}>
-        {new Date().toLocaleDateString('ja-JP',
-         { year: 'numeric', 
-           month: 'long',
-           day: 'numeric' },
-           )} in {communityName}
-      </p>
+        <p style={{ marginBottom: '1rem'}}>
+          {new Date().toLocaleDateString('ja-JP',
+          { year: 'numeric', 
+            month: 'long',
+            day: 'numeric' },
+            )} in {communityName}
+        </p>
 
-      <p style={{ marginBottom: '2rem' }}>
-        <Link href={`/?communityId=${communityId}`}>
-          <button className={styles.button}>
-            予定を追加・変更する
-          </button>
-        </Link>
-      </p>
+        <p style={{ marginBottom: '2rem' }}>
+          <Link href={`/?communityId=${communityId}`}>
+            <button className={styles.button}>
+              予定を追加・変更する
+            </button>
+          </Link>
+        </p>
 
-      {sortedTimes.map((time) => {
-        const people = scheduleByTime[time] || [];
-        const isEmpty = people.length === 0;
-        const isBusy = people.length >= 5;
-        const isAlmost = people.length === 4;
-        
-        return (
-          <div
-            key={time}
-            className={[
-              styles.timeBlock,
-              isEmpty ? styles.empty : '',
-              isBusy ? styles.busy : ''
-            ].join(' ')}
-          >
-            <strong>🕒 {time}</strong><br />
-            {isEmpty
-              ? '（誰もいません）'
-              : (
-              <>
-                {people.length}人 ({people.join(', ')})
-                {isBusy && (
-                    <div style={{ marginTop: '0.3rem', color: '#ffd700', fontWeight: 'bold' }}>
-                        フルパ準備完了
-                    </div>
+        {sortedTimes.map((time) => {
+          const people = scheduleByTime[time] || [];
+          const isEmpty = people.length === 0;
+          const isBusy = people.length >= 5;
+          const isAlmost = people.length === 4;
+          
+          return (
+            <div
+              key={time}
+              className={[
+                styles.timeBlock,
+                isEmpty ? styles.empty : '',
+                isBusy ? styles.busy : ''
+              ].join(' ')}
+            >
+              <strong>🕒 {time}</strong><br />
+              {isEmpty
+                ? '（誰もいません）'
+                : (
+                <>
+                  {people.length}人 ({people.join(', ')})
+                  {isBusy && (
+                      <div style={{ marginTop: '0.3rem', color: '#202225', fontWeight: 'bold' }}>
+                          参加者が5人に達しました！
+                      </div>
+                  )}
+                  {isAlmost && (
+                      <div style={{marginTop: '0.3rem', color: '#ff4d4f', fontWeight: 'bold' }}>
+                          あとひとりで5人に達します
+                      </div>
+                  )}
+                </>
                 )}
-                {isAlmost && (
-                    <div style={{marginTop: '0.3rem', color: '#ff4d4f', fontWeight: 'bold' }}>
-                        あとひとりでフルパできます
-                    </div>
-                )}
-              </>
-              )}
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
