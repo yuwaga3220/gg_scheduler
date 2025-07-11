@@ -1,7 +1,8 @@
+// schedule.js
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from "@/styles/schedule.module.css";
+import styles from "@/styles/index.module.css";
 
 
 export default function Home() {
@@ -10,30 +11,35 @@ export default function Home() {
   const [times, setTimes] = useState([]);
   const [communityName, setCommunityName] = useState('');
 
-  const [communityId, setCommunityId] = useState('mock-community') // ← モックIDをセット
+//本番の処理---------------------------------------------------------------
 
-  // 初期表示でモックデータを設定
+  // ✅ router.isReady を使ってクエリが使える状態になってから処理
+  
+  const router = useRouter();
+  const { communityId } = router.query;
+
   useEffect(() => {
-    setCommunityName('ゲーマーズ部屋（モック）') // ← ダミー名
-  }, [])
+  if (!router.isReady) return;
+  
+  if (!router.query.communityId) {
+    router.replace('/register');
+    return
+  }
 
+  fetch(`/api/communityName?communityId=${communityId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.name) setCommunityName(data.name);
+    });
+}, [router.isReady]);
 
-  const timeOptions = [
-    '13:00-', 
-    '14:00-', 
-    '15:00-', 
-    '16:00-', 
-    '17:00-', 
-    '18:00-', 
-    '19:00-', 
-    '20:00-', 
-    '21:00-', 
-    '22:00-', 
-    '23:00-', 
-    '24:00-', 
-    '25:00-', 
-    '26:00-'
-  ];
+  // ✅ クエリが読み込まれていない間は loading 表示などを返す
+  if (!router.isReady) return <p>読み込み中...</p>;
+  if (!communityId) return null;
+
+//ここまで
+
+  const timeOptions = ['13:00-', '14:00-', '15:00-', '16:00-', '17:00-', '18:00-', '19:00-', '20:00-', '21:00-', '22:00-', '23:00-', '24:00-', '25:00-', '26:00-'];
 
   const handleCheckboxChange = (time) => {
     setTimes((prev) =>
@@ -100,7 +106,7 @@ export default function Home() {
             <label className={styles.label}>遊べる時間帯</label>
             <div className={styles.timeGrid}>
               {timeOptions.map((time) => (
-                <label key={time} class={styles.timeOption} style={{ display: 'block', marginBottom: '8px' }}>
+                <label key={time} className={styles.timeOption} style={{ display: 'block', marginBottom: '8px' }}>
                   <input
                     type="checkbox"
                     checked={times.includes(time)}
