@@ -68,10 +68,33 @@
   grid-template-rows: repeat(4, auto);       /* 縦に5行 */
   grid-auto-flow: column;                    /* ← これが重要！縦→横に流す */
   gap: 0.5rem 0.5rem;
+  overflow-x: auto;
 }
 
 .timeOption {
   display: flex;
   align-items: center;
   white-space: nowrap;
+}
+
+/* スクロールバー全体のスタイル */
+.timeGrid::-webkit-scrollbar {
+  height: 6px; /* スクロールバーの高さ */
+}
+
+/* スクロールバーの背景部分 */
+.timeGrid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+/* スクロールバーのつまみ（動く部分） */
+.timeGrid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* つまみにマウスを乗せたときのスタイル */
+.timeGrid::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }

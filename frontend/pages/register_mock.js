@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/register.module.css';
+import Image from 'next/image';
 
 export default function RegisterPage() {
   const [serverName, setServerName] = useState('');
@@ -36,7 +37,14 @@ export default function RegisterPage() {
     <div className={styles.container}>
       <div className={styles.card}>
         <h1 className={styles.heading}>
-          🛡️ ギルド登録&nbsp;
+          <Image
+            src="/gg_scheduler_icon.png"
+            alt="GG Scheduler Icon"
+            width={32}
+            height={32}
+            className={styles.icon}
+          />
+          サーバー登録&nbsp;
           <span className={styles.sub}>― GG Scheduler ―</span>
         </h1>
 
@@ -59,7 +67,7 @@ export default function RegisterPage() {
           /* 📝 登録フォーム */
           <form className={styles.form} onSubmit={handleSubmit}>
             <label className={styles.label}>
-              ギルド名（サーバー名）
+              サーバー名
               <input
                 type="text"
                 value={serverName}
@@ -71,7 +79,7 @@ export default function RegisterPage() {
             </label>
 
             <label className={styles.label}>
-              Discord Webhook URL
+              Webhook URL（設定→連携サービス）
               <input
                 type="text"
                 value={webhookUrl}
@@ -83,7 +91,7 @@ export default function RegisterPage() {
             </label>
 
             <button type="submit" className={styles.button}>
-              ギルド登録
+              サーバー登録
             </button>
           </form>
         )}
