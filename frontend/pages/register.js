@@ -77,7 +77,7 @@ export default function RegisterPage() {
               Webhook URL（設定→連携サービス）
               <input
                 type="text"
-                value={webhookUrl}
+                value={webhook}
                 onChange={(e) => setWebhook(e.target.value)}
                 placeholder="https://discord.com/api/webhooks/..."
                 required
