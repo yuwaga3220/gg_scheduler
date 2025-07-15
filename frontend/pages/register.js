@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from "@/styles/register.module.css";
+import Image from 'next/image';
+
 
 
 export default function RegisterPage() {
