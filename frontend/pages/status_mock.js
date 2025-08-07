@@ -1,4 +1,4 @@
-// pages/status_mock.js
+// status_mock.js
 import React from 'react';
 import Link from 'next/link';
 import styles from "@/styles/status.module.css";

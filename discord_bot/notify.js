@@ -1,8 +1,9 @@
 // discord_bot/notify.js
+// 指定の時間にディスコードフックにURLを送信する
 const cron = require('node-cron');
 
 const { sendToWebhook, getAllCommunities } = require('./utils');
-// テスト用で毎分通知'* * * * *'
+// テスト用で毎分通知する場合'* * * * *'
 // 本番用は '0 12 * * *'で毎日12時に投稿するようにする
 cron.schedule('0 3 * * *', async () => { 
   const today = new Date().toISOString().slice(0, 10); // 例: 2025-06-21

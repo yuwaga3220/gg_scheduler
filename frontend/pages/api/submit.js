@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      // ✅ 既存エントリがあるか確認
+      // 既存エントリがあるか確認
       const existingEntry = await prisma.scheduleEntry.findFirst({
         where: {
           userName: name,
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     }
   }
 
-  // ✅ デバッグ用 GET
+  // デバッグ用
   if (req.method === 'GET') {
     const all = await prisma.scheduleEntry.findMany();
     return res.status(200).json(all);

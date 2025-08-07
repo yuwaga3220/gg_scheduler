@@ -1,4 +1,5 @@
 // pages/register.js
+// サーバの代表者がサーバのウェブフックを登録するページ
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from "@/styles/register.module.css";
@@ -44,7 +45,7 @@ export default function RegisterPage() {
         </h1>
 
         {communityId ? (
-          /* ✅ 登録完了後の表示 */
+          // 登録完了後の表示
           <section className={styles.successArea}>
             <p className={styles.successBadge}>✅ 登録が完了しました！</p>
             <p>以下の URL が Discord に毎日自動送信されるようになりました👇</p>
@@ -59,7 +60,7 @@ export default function RegisterPage() {
             </button>
           </section>
         ) : (
-          /* 📝 登録フォーム */
+          // 登録フォーム
           <form className={styles.form} onSubmit={handleSubmit}>
             <label className={styles.label}>
               サーバー名
@@ -91,7 +92,7 @@ export default function RegisterPage() {
           </form>
         )}
 
-        {/* ℹ️ 説明エリア（常時表示） */}
+        {/* 説明エリア（常時表示） */}
         <section className={styles.infoArea}>
           <h2 className={styles.infoHeading}>GG Scheduler の機能</h2>
           <ul className={styles.infoList}>

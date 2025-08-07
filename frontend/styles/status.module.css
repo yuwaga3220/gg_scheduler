@@ -1,8 +1,8 @@
 .container {
   padding-left: 2rem;
   padding-right: 2rem;
-  max-width: 600px;     /* ← これ重要！ */
-  margin: 0 auto;       /* ← 中央寄せ */
+  max-width: 600px;  
+  margin: 0 auto;   
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: #2e1f0f;
@@ -34,8 +34,8 @@
 .button {
   background-color: #5865f2;
   color: white;
-  padding: 12px 24px;       /* 高さ + 横幅感アップ */
-  font-size: 1.1rem;         /* テキスト大きめに */
+  padding: 12px 24px;      
+  font-size: 1.1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -57,7 +57,7 @@
 }
 
 .timeBlock {
-  background-color: #f7f7f8;  /* Discord風の暗めグレー */
+  background-color: #f7f7f8;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   margin-bottom: 0.75rem;
@@ -72,8 +72,8 @@
 }
 
 .busy {
-  border: 2px solid #5865f2;     /* ゴールド枠 */
-  background-color: #e0e4ff;     /* 少し明るめに */
-  box-shadow: 0 0 6px rgba(88, 101, 242, 0.4); /* ふんわり光る */
+  border: 2px solid #5865f2;  
+  background-color: #e0e4ff; 
+  box-shadow: 0 0 6px rgba(88, 101, 242, 0.4); 
   font-weight: 600;
 }

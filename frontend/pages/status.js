@@ -1,4 +1,5 @@
-// pages/status.js
+// status.js
+// みんなのスケジュールを確認するページ
 import { PrismaClient } from '@prisma/client';
 import React from 'react';
 import Link from 'next/link';
@@ -72,7 +73,7 @@ export default function StatusPage({ scheduleByTime, communityName, communityId 
   );
 }
 
-// ✅ サーバーサイドでクエリを取得
+// サーバーサイドでクエリを取得
 export async function getServerSideProps(context) {
   const prisma = new PrismaClient();
   const today = new Date().toISOString().slice(0, 10);
@@ -97,7 +98,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  // ✅ communityId に一致するデータだけ取得
+  // communityId に一致するデータだけ取得
   const entries = await prisma.scheduleEntry.findMany({
     where: {
       date: today,

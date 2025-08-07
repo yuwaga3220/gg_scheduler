@@ -1,5 +1,5 @@
+// index_mock.js
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from "@/styles/index.module.css";
 
@@ -10,11 +10,11 @@ export default function Home() {
   const [times, setTimes] = useState([]);
   const [communityName, setCommunityName] = useState('');
 
-  const [communityId, setCommunityId] = useState('mock-community') // ← モックIDをセット
+  const [communityId, setCommunityId] = useState('mock-community') // モックIDをセット
 
   // 初期表示でモックデータを設定
   useEffect(() => {
-    setCommunityName('ゲーマーズ部屋（モック）') // ← ダミー名
+    setCommunityName('ゲーマーズ部屋（モック）') // ダミー名
   }, [])
 
 
@@ -52,7 +52,7 @@ export default function Home() {
       body: JSON.stringify({
         name,
         times,
-        communityId, // ✅ URLから取得した値をそのまま送信
+        communityId, // URLから取得した値をそのまま送信
         date: today
       }),
     });

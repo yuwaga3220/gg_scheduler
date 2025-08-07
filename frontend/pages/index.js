@@ -1,4 +1,5 @@
-// schedule.js
+// index.js
+// 予定を登録するページ
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -11,9 +12,7 @@ export default function Home() {
   const [times, setTimes] = useState([]);
   const [communityName, setCommunityName] = useState('');
 
-//本番の処理---------------------------------------------------------------
-
-  // ✅ router.isReady を使ってクエリが使える状態になってから処理
+  // router.isReady を使ってクエリが使える状態になってから処理
   
   const router = useRouter();
   const { communityId } = router.query;
@@ -33,11 +32,10 @@ export default function Home() {
     });
 }, [router.isReady]);
 
-  // ✅ クエリが読み込まれていない間は loading 表示などを返す
+  // クエリが読み込まれていない間は loading 表示などを返す
   if (!router.isReady) return <p>読み込み中...</p>;
   if (!communityId) return null;
 
-//ここまで
 
   const timeOptions = ['13:00-', '14:00-', '15:00-', '16:00-', '17:00-', '18:00-', '19:00-', '20:00-', '21:00-', '22:00-', '23:00-', '24:00-', '25:00-', '26:00-'];
 
@@ -58,7 +56,7 @@ export default function Home() {
       body: JSON.stringify({
         name,
         times,
-        communityId, // ✅ URLから取得した値をそのまま送信
+        communityId, // URLから取得した値をそのまま送信
         date: today
       }),
     });

@@ -1,4 +1,4 @@
-// pages/register.js
+// pages/register_mock.js
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '@/styles/register.module.css';
@@ -13,22 +13,7 @@ export default function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // --- API 叩く部分（モック） ---
-    // try {
-    //   const res = await fetch('/api/registerCommunity', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ name: serverName, webhook: webhookUrl }),
-    //   });
-    //   const data = await res.json();
-    //   if (!res.ok) throw new Error('登録に失敗しました');
-    //   setCommunityId(data.id);      // 正常: 登録完了
-    // } catch (err) {
-    //   alert(err.message);
-    // }
-    // --------------------------------
-
-    // 🎨 デモ用: 仮 ID をセット
+    // デモ用: 仮IDをセット
     setCommunityId('demo-1234');
   };
 
@@ -49,7 +34,7 @@ export default function RegisterPage() {
         </h1>
 
         {communityId ? (
-          /* ✅ 登録完了後の表示 */
+          // 登録完了後の表示
           <section className={styles.successArea}>
             <p className={styles.successBadge}>✅ 登録が完了しました！</p>
             <p>以下の URL が Discord に毎日自動送信されるようになりました👇</p>
@@ -64,7 +49,7 @@ export default function RegisterPage() {
             </button>
           </section>
         ) : (
-          /* 📝 登録フォーム */
+          //登録フォーム
           <form className={styles.form} onSubmit={handleSubmit}>
             <label className={styles.label}>
               サーバー名
@@ -96,7 +81,7 @@ export default function RegisterPage() {
           </form>
         )}
 
-        {/* ℹ️ 説明エリア（常時表示） */}
+        {/* 説明エリア（常時表示） */}
         <section className={styles.infoArea}>
           <h2 className={styles.infoHeading}>GG Scheduler の機能</h2>
           <ul className={styles.infoList}>
