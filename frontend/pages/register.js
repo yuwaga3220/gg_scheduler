@@ -2,9 +2,9 @@
 // サーバの代表者がサーバのウェブフックを登録するページ
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import styles from "@/styles/register.module.css";
+import Head from 'next/head'; // ページ情報を設定するためにHeadをインポート
 import Image from 'next/image';
-
+import styles from "@/styles/register.module.css";
 
 
 export default function RegisterPage() {
@@ -31,6 +31,12 @@ export default function RegisterPage() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>サーバー登録 - GG Scheduler</title>
+        <meta name="description" content="GG SchedulerにあなたのDiscordサーバーを登録して、ゲームの予定調整を自動化しましょう。" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className={styles.card}>
         <h1 className={styles.heading}>
           <Image
@@ -50,7 +56,7 @@ export default function RegisterPage() {
             <p className={styles.successBadge}>✅ 登録が完了しました！</p>
             <p>以下の URL が Discord に毎日自動送信されるようになりました👇</p>
             <code className={styles.codeBox}>
-              https://gg-scheduler.vercel.app/?communityId={communityId}
+              {`https://gg-scheduler.vercel.app/?communityId=${communityId}`}
             </code>
             <button
               className={styles.button}
