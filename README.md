@@ -23,21 +23,19 @@
 
 ## 使い方
 
-1. 本アプリを導入したいDiscordサーバの**Webhook URL**を以下のURLから登録します  
-   👉 [https://gg-scheduler.vercel.app/register](https://gg-scheduler.vercel.app/register)
+1. 本アプリを導入したいDiscordサーバの**Webhook URL**を以下のURLから登録します
+ [https://gg-scheduler.vercel.app/register](https://gg-scheduler.vercel.app/register)
 
-2. Webhookの取得方法：  
+3. Webhookの取得方法：  
    `Discordのサーバー設定 → アプリ → 連携サービス → ウェブフック → 新しいウェブフック → URLをコピー`
 
-3. 指定日時になると、**スケジュール登録用URL**がDiscordに自動で送信されます。
+4. 指定日時になると、**スケジュール登録用URL**がDiscordに自動で送信されます。
 
-4. サーバーメンバーが各自のスケジュールを登録・共有できます。
+5. サーバーメンバーが各自のスケジュールを登録・共有できます。
 
-## 実際の利用例
+## 運用経験
 
-- 自分の入っているゲームコミュニティで使う
-- 友人の集まりに使う
-- 固定メンバーでの活動管理など
+- 自分の入っている数十人規模のゲームコミュニティでの使用
 
 ## アプリ画面
 ![サーバ登録](./images/ServerRegistration.png)
